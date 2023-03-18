@@ -133,39 +133,39 @@ public class SpellingBee {
         int arr1I = 0;
         int arr2I = 0;
         int bigArrI = start;
-        String[] arr1 = new String[mid - start + 1];
-        String[] arr2 = new String[end - mid];
+        ArrayList<String> arr1 = new ArrayList<String>();
+        ArrayList<String> arr2 = new ArrayList<String>();
 
         // Copies values into new arrays
         for (int i = 0; i < mid - start + 1; i++){
-            arr1[i] = arr.get(i + start);
+            arr1.add(arr.get(i + start));
         }
         for (int i = 0; i < end - mid; i++){
-            arr2[i] = arr.get(i + mid + 1);
+            arr2.add(arr.get(i + mid + 1));
         }
 
         // Merges the two arrays into an arraylist
-        while (arr1I < arr1.length && arr2I < arr2.length){
-            if (arr1[arr1I].compareTo(arr2[arr2I]) <= 0){
-                words.set(bigArrI, arr1[arr1I]);
+        while (arr1I < arr1.size() && arr2I < arr2.size()){
+            if (arr1.get(arr1I).compareTo(arr2.get(arr2I)) <= 0){
+                words.set(bigArrI, arr1.get(arr1I));
                 arr1I++;
             }
             else{
-                words.set(bigArrI, arr2[arr2I]);
+                words.set(bigArrI, arr2.get(arr2I));
                 arr2I++;
             }
             bigArrI++;
         }
 
         // Which ever one has elements left is added to the end
-        while (arr1I < arr1.length){
-            words.set(bigArrI, arr1[arr1I]);
+        while (arr1I < arr1.size()){
+            words.set(bigArrI, arr1.get(arr1I));
             arr1I++;
             bigArrI++;
         }
 
-        while (arr2I < arr2.length){
-            words.set(bigArrI, arr2[arr2I]);;
+        while (arr2I < arr2.size()){
+            words.set(bigArrI, arr2.get(arr2I));;
             arr2I++;
             bigArrI++;
         }
