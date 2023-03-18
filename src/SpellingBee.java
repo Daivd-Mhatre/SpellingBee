@@ -2,6 +2,7 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+
 /**
  * Spelling Bee
  *
@@ -28,6 +29,8 @@ import java.util.Scanner;
  *
  * DO NOT MODIFY MAIN OR ANY OF THE METHOD HEADERS.
  */
+
+// David Mhatre, 17 March 2023
 public class SpellingBee {
 
     private String letters;
